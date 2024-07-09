@@ -1,0 +1,22 @@
+tr:
+  hello: "Merhaba"
+  activerecord:
+    models:
+      post: "Gönderi"
+    attributes:
+      post:
+        title: "Başlık"
+        content: "İçerik"
+        name: "İsim"
+  helpers:
+    submit:
+      create: "Oluştur"
+      update: "Güncelle"
+      submit: "Gönder"
+  views:
+    posts:
+      edit:
+        title: "Gönderiyi Düzenle"
+        name: "İsim"
+        content: "İçerik"
+        update: "Gönderiyi Güncelle"

@@ -1,0 +1,17 @@
+<div class="comment">
+  <p>
+    <b>Yorum Yapan:</b>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <b>Yorum:</b>
+    <%= comment.body %>
+  </p>
+  <% if current_user.present? %>
+  <p>
+    <%= link_to 'Yorumu sil', [comment.post, comment], method: :delete,
+     data: { 'turbo-confirm': 'Bu yorumu silmek istediğinize emin misiniz?', 'turbo-method': :delete }, class: 'btn btn-danger' %>
+  <% end %>
+  </p>
+</div>

@@ -1,0 +1,38 @@
+<h1>Gönderileri listele</h1>
+<table>
+  <tr>
+    <th>Başlık</th>
+    <th>Yazar</th>
+    <th>İçerik</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.body %></td>
+    <td><%= link_to 'Göster', post %></td>
+   <% if current_user.present? %> 
+    <td><%= link_to 'Düzenle', edit_post_path(post) %></td>
+    <td><%= link_to 'Sil', post_path(post), method: :delete,
+     data: { 'turbo-confirm': 'Bu yazıyı silmek istediğinize emin misiniz?', 'turbo-method': :delete } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if current_user.present? %>
+<%= link_to 'Yeni gönderi', new_post_path %>
+<% end %>
+<br/>
+
+<% if user_signed_in? %> 
+ <div> Hoşgeldiniz <%= current_user.email %> </div> 
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %> 
+<% end %>

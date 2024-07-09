@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Başlık:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Yazar:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>İçerik:</b>
+  <%= @post.body %>
+</p>
+<hr>
+<h2>Yorumlar</h2>
+<%= render @post.comments %>
+
+
+<%= render "comments/form" %>
+
+<br />
+
+<% if current_user.present? %>
+<%= link_to 'Gönderiyi Düzenle', edit_post_path(@post) %> |
+<% end %>
+
+<%= link_to 'Gönderilere Geri Dön', posts_path %>
