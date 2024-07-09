@@ -8,6 +8,13 @@ tr:
         title: "Başlık"
         content: "İçerik"
         name: "İsim"
+        user: "Kullanıcı"
+    errors:
+      models:
+        post:
+          attributes:
+            user:
+              required: "Kullanıcı zorunludur"
   helpers:
     submit:
       create: "Oluştur"

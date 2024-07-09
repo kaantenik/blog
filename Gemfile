@@ -9,6 +9,8 @@ gem 'devise'
 
 gem "rolify"
 
+gem "pundit"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
